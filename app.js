@@ -499,7 +499,8 @@ app.get('/api/v1/admin/calls', authenticateAdmin, async (req, res) => {
 app.get('/api/v1/health', (req, res) => {
   sendResponse(res, {
     status: 'ok',
-    timestamp: new Date().toISOString()
+    timestamp: new Date().toISOString(),
+    pool: pool
   });
 });
 
