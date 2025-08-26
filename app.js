@@ -9,8 +9,7 @@ const { v4: uuidv4 } = require('uuid');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 8080; 
-
+const PORT = process.env.PORT || 3000; 
 // Database connection
 const pool = new Pool({
   user: process.env.DB_USER || 'postgres',
@@ -499,8 +498,7 @@ app.get('/api/v1/admin/calls', authenticateAdmin, async (req, res) => {
 app.get('/api/v1/health', (req, res) => {
   sendResponse(res, {
     status: 'ok',
-    timestamp: new Date().toISOString(),
-    pool: pool
+    timestamp: new Date().toISOString()
   });
 });
 
